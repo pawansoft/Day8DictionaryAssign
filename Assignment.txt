@@ -1,0 +1,252 @@
+
+Write a program in following steps
+Roll a dice and find the number between 1 to 6
+Repeat the dice and find the result each time
+Store the result in dictionary
+Repeat till any one of the number has reach 10 times
+Find the number that reaches max times and min times and print them
+
+
+#!/bin/bash
+
+max=10;
+counter1=0;
+counter2=0;
+counter3=0;
+counter4=0;
+counter5=0;
+counter6=0;
+declare -A Dice;
+while :
+do
+        num=$((RANDOM%6+1))
+        if [[ $num -eq 1 && $counter1 -lt 10 ]]
+        then
+                counter1=$(($counter1 + 1))
+                Dice[One]=$counter1;
+        elif [[ $num -eq 2 && $counter2 -lt 10 ]]
+        then
+                counter2=$(($counter2 + 1))
+                Dice[Two]=$counter2;
+        elif [[ $num -eq 3 && $counter3 -lt 10 ]]
+        then
+                counter3=$(($counter3 + 1))
+                Dice[Three]=$counter3
+
+        elif [[ $num -eq 4 && $counter4 -lt 10 ]]
+        then
+                counter4=$(($counter4 + 1))
+                Dice[Four]=$counter4
+        elif [[ $num -eq 5 && $counter5 -lt 10 ]]
+        then
+                counter5=$(($counter5 + 1))
+                Dice[Five]=$counter5
+        elif [[ $num -eq 6 &&  $counter6 -lt 10 ]]
+        then
+                counter6=$(($counter6 + 1))
+                Dice[Six]=$counter6
+        ##elif [[ $counter1 -eq 10 || $counter2 -eq 10 || $counter3 -eq 10 || $counter4 -eq 10 || $counter5 -eq 10 || $counter6 -eq 10 ]]
+        ##then
+        else
+                break;
+        fi
+done
+
+       
+ if [[ $counter1 -le $counter2 && $counter1 -le $counter3 && $counter1 -le $counter4 && $counter1 -le $counter5 && $counter1 -le $counter6 ]]
+        then
+                echo "Dice[one] is lowest ${Dice[One]}"
+        elif [[ $counter2 -le $counter1 && $counter2 -le $counter3 && $counter2 -le $counter4 && $counter2 -le $counter5 && $counter2 -le $counter6  ]]
+        then
+                echo "Dice[two] is lowest ${Dice[Two]}"
+        elif [[ $counter3 -le $counter1 && $counter3 -le $counter2 && $counter3 -le $counter4 && $counter3 -le $counter5 && $counter3 -le $counter6 ]]
+        then
+                echo "Dice[Three] is lowest ${Dice[Three]}"
+
+        elif [[ $counter4 -le $counter1 && $counter4 -le $counter2 && $counter4 -le $counter3 && $counter4 -le $counter5 && $counter5 -le $counter6 ]]
+        then
+                echo "Dice[Four] is lowest ${Dice[Four]}"
+        elif [[ $counter5 -le $counter1 && $counter5 -le $counter2 && $counter5 -le $counter3 && $counter5 -le $counter4 && $counter5 -le $counter6 ]]
+        then
+                echo "Dice[five] is lowest ${Dice[Five]}"
+        elif [[ $counter6 -le $counter1 && $counter6 -le $counter2 && $counter6 -le $counter3 && $counter6 -le $counter4 && $counter6 -le $counter5 ]]
+        then
+                echo "Dice[Six] is lowest ${Dice[Six]}"
+
+        fi
+
+        if [ $counter1 -eq $max ]
+        then
+                echo "Dice[one] is Greatest ${Dice[One]}"
+        elif [ $counter2 -eq $max ]
+        then
+                echo "Dice[two] is Greatest ${Dice[Two]}"
+        elif [ $counter3 -eq $max ]
+        then
+                echo "Dice[Three] is Greatest ${Dice[Three]}"
+
+        elif [ $counter4 -eq $max ]
+        then
+                echo "Dice[Four] is Greatest ${Dice[Four]}"
+        elif [ $counter5 -eq $max ]
+        then
+                echo "Dice[five] is Greatest ${Dice[Five]}"
+        elif [ $counter6 -eq $mqx ]
+        then
+                echo "Dice[Six] is Greatest ${Dice[Six]}"
+
+        fi
+
+
+
+echo "Dice[1] = ${Dice[One]} : Dice[2] = ${Dice[Two]} :  Dice[3] = ${Dice[Three]} : Dice[4] = ${Dice[Four]} : Dice[5] = ${Dice[Five]} : Dice[6] = ${Dice[Six]}" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a program to generate a birth month of 50 individuals between the year 92 and 93. Find all the individuals having birthdays in the same month store it to and finally print it. 
+
+!/bin/bash
+
+jan=0;
+feb=0;
+march=0;
+apr=0;
+may=0;
+jun=0;
+july=0;
+aug=0;
+sep=0;
+oct=0;
+nov=0;
+dec=0;
+declare -A age
+read -p "Enter the number of persion " ind
+for(( i = 1; i <= $ind; i++ ))
+do
+        vol=$((RANDOM%12+1))
+        age[$i]=$vol
+done
+for(( i=1; i <= $ind; i++ ))
+do
+
+        echo "age[$i] =  ${age[$i]}"
+        if [ ${age[$i]} -eq 1 ]
+        then
+                jan=$((jan+1))
+        elif [ ${age[$i]} -eq 2 ]
+        then
+                feb=$((feb+1))
+        elif [ ${age[$i]} -eq 3 ]
+        then
+                march=$((march+1))
+         elif [ ${age[$i]} -eq 4 ]
+        then
+                apr=$((apr+1))
+         elif [ ${age[$i]} -eq 5 ]
+        then
+                may=$((may+1))
+         elif [ ${age[$i]} -eq 6 ]
+        then
+                jun=$((jun+1))
+         elif [ ${age[$i]} -eq 7 ]
+        then
+                july=$((july+1))
+         elif [ ${age[$i]} -eq 8 ]
+        then
+                aug=$((aug+1))
+         elif [ ${age[$i]} -eq 9 ]
+        then
+                sep=$((sep+1))
+
+
+
+Output:
+Enter the number of persion 50
+age[1] =  8
+age[2] =  2
+age[3] =  9
+age[4] =  4
+age[5] =  5
+age[6] =  8
+age[7] =  12
+age[8] =  2
+age[9] =  10
+age[10] =  3
+age[11] =  7
+age[12] =  4
+age[13] =  6
+age[14] =  11
+age[15] =  1
+age[16] =  5
+age[17] =  6
+age[18] =  3
+age[19] =  9
+age[20] =  6
+age[21] =  9
+age[22] =  6
+age[23] =  2
+age[24] =  8
+age[25] =  11
+age[26] =  7
+age[27] =  3
+age[28] =  11
+age[29] =  11
+age[30] =  3
+age[31] =  9
+age[32] =  6
+age[33] =  8
+age[34] =  3
+age[35] =  2
+age[36] =  8
+age[37] =  5
+age[38] =  1
+age[39] =  4
+age[40] =  10
+age[41] =  1
+age[42] =  4
+age[43] =  3
+age[44] =  9
+age[45] =  6
+age[46] =  1
+age[47] =  5
+age[48] =  6
+age[49] =  2
+age[50] =  5
+--------------------------------------------------------------------------- 
+January = 4
+Feburary = 5
+March = 6
+April = 4
+Jun = 7
+July = 2
+Aug = 5
+September = 5
+October = 2
+November = 4
+December = 1
+
+
